@@ -30,7 +30,8 @@
     --line:rgba(212,175,95,.32);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+  img{max-width:100%;}
   body{
     font-family:'Poppins',sans-serif;
     color:var(--cream-text);
@@ -223,19 +224,46 @@
   .reveal.show{opacity:1;transform:none;}
 
   @media(max-width:760px){
+    section{padding:60px 18px;}
     .pair{grid-template-columns:1fr;gap:34px;}
     .heart{transform:rotate(90deg);}
     .cards{grid-template-columns:1fr;}
     .venue-grid{grid-template-columns:1fr;gap:18px;}
+    .who .stand{max-width:210px;}
+    .venue-grid .vmascot{max-width:240px;}
+    .hero-mascot{max-width:300px;}
   }
   @media(max-width:480px){
-    section{padding:54px 16px;}
-    .hero{padding:10px 16px 54px;}
-    .kicker{margin-bottom:30px;}
-    .cbox{min-width:0;flex:1 1 40%;}      /* 2x2 grid of countdown boxes */
-    .cbox .n{font-size:2.2rem;}
-    .ecard .pic img{max-height:200px;}
-    .vcard{padding:28px 22px;}
+    section{padding:48px 16px;}
+    .toranam{font-size:1.25rem;gap:7px;padding-top:14px;}
+    .hero{padding:8px 14px 48px;}
+    .badge{margin:18px 0 4px;font-size:.7rem;padding:7px 16px;letter-spacing:.5px;}
+    .hero .sub{font-size:1.05rem;}
+    .hero-mascot{max-width:255px;}
+    .date-pill{font-size:1rem;padding:10px 18px;gap:8px;}
+    .scroll-hint{margin-top:22px;}
+    .kicker{margin-bottom:26px;letter-spacing:2px;}
+    .title{font-size:clamp(1.7rem,8vw,2.3rem);}
+    .who .card{padding:14px 14px;}
+    .who .nm{font-size:1.5rem;}
+    .ecard .pic img{max-height:190px;}
+    .ecard h3{font-size:1.5rem;}
+    .cbox{min-width:0;flex:1 1 40%;padding:18px 8px;}  /* 2x2 grid of countdown boxes */
+    .cbox .n{font-size:2.1rem;}
+    .vcard{padding:26px 20px;}
+    .vcard .vname{font-size:1.7rem;}
+    .vcard .hello{font-size:1.3rem;}
+    .vcard .mbtn{padding:12px 26px;}
+    .foot-illu{width:88%;}
+    footer{padding:56px 18px 72px;}
+  }
+  @media(max-width:360px){
+    .title{font-size:1.5rem;}
+    .hero-mascot{max-width:220px;}
+    .cbox{flex:1 1 42%;}
+    .cbox .n{font-size:1.9rem;}
+    .date-pill{font-size:.9rem;}
+    .who .nm{font-size:1.35rem;}
   }
 </style>
 </head>
