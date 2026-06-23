@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Sree Shreya & Yogesh</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-maroon: #721c24;
+            --deep-crimson: #4a0007;
+            --royal-gold: #d4af37;
+            --light-gold: #f3e5ab;
+            --text-dark: #333333;
+            --text-light: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--deep-crimson);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Traditional Mandala Background Elements */
+        .bg-overlay {
+            background: radial-gradient(circle, rgba(114,28,36,0.9) 0%, rgba(74,0,7,1) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Main Card Container */
+        .invitation-card {
+            background-color: #fffdf9;
+            max-width: 650px;
+            width: 100%;
+            border: 8px double var(--royal-gold);
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            position: relative;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Traditional Corner Borders */
+        .invitation-card::before {
+            content: "🔱";
+            position: absolute;
+            top: 15px;
+            font-size: 24px;
+            color: var(--royal-gold);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Typography styling */
+        .auspicious-symbol {
+            font-size: 28px;
+            color: var(--royal-gold);
+            margin-bottom: 10px;
+        }
+
+        .invitation-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-maroon);
+            font-weight: 600;
+        }
+
+        .couple-names {
+            margin: 30px 0;
+        }
+
+        .name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 2.2rem;
+            color: var(--primary-maroon);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .parents {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .ampersand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--royal-gold);
+            margin: 10px 0;
+            display: block;
+        }
+
+        hr.divider {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(212, 175, 55, 0.75), rgba(0, 0, 0, 0));
+            margin: 25px auto;
+            width: 80%;
+        }
+
+        /* Events Section */
+        .section-title {
+            font-family: 'Cinzel Decorative', serif;
+            color: var(--royal-gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            background-color: var(--deep-crimson);
+            padding: 5px 15px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .event-box {
+            background: #fff8eb;
+            border: 1px dashed var(--royal-gold);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            transition: transform 0.3s ease;
+        }
+
+        .event-box:hover {
+            transform: scale(1.02);
+        }
+
+        .event-name {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: 1.2rem;
+            color: var(--primary-maroon);
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .event-details {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .time {
+            font-weight: 600;
+            color: #b32424;
+        }
+
+        /* Venue styling */
+        .venue-section {
+            margin-top: 30px;
+            padding: 0 10px;
+        }
+
+        .venue-title {
+            font-weight: 600;
+            color: var(--primary-maroon);
+            margin-bottom: 5px;
+        }
+
+        .btn-maps {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            background-color: var(--royal-gold);
+            color: var(--deep-crimson);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-maps:hover {
+            background-color: var(--deep-crimson);
+            color: var(--royal-gold);
+            border: 1px solid var(--royal-gold);
+            box-shadow: 0 6px 15px rgba(212,175,55,0.4);
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            margin: 30px 0 10px;
+        }
+        
+        .countdown-title {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .countdown-item {
+            background: var(--primary-maroon);
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+            min-width: 60px;
+        }
+
+        .countdown-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--light-gold);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 480px) {
+            .name { font-size: 1.8rem; }
+            .ampersand { font-size: 2.8rem; }
+            .invitation-card { padding: 30px 15px; }
+            .event-box { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-overlay">
+        <div class="invitation-card">
+            
+            <!-- Auspicious Symbol -->
+            <div class="auspicious-symbol">ॐ</div>
+            
+            <p class="invitation-text">We cordially invite you to celebrate the holy union of</p>
+            
+            <!-- Couple Details -->
+            <div class="couple-names">
+                <div class="bride-details">
+                    <h1 class="name">Sree Shreya</h1>
+                    <p class="parents">Daughter of Sri. Manikandan & Smt. Maheswari</p>
+                </div>
+                <span class="ampersand">&</span>
+
+                <div class="groom-details">
+                    <h1 class="name">Yogesh</h1>
+                    <p class="parents">Son of Sri. Athinarasimman & Smt. Shanthi</p>
+                </div>
+                
+
+            </div>
+            
+            <hr class="divider">
+            
+            <!-- Events Section -->
+            <h2 class="section-title">Programmes</h2>
+            
+            <!-- Event 1 -->
+            <div class="event-box">
+                <div class="event-name">Nichyathartham</div>
+                <div class="event-details">
+                    <div>Wednesday, 1st July 2026</div>
+                    <div class="time">6.00 pm to 7.30 pm</div>
+                </div>
+            </div>
+            
+            <!-- Event 2 -->
+            <div class="event-box">
+                <div class="event-name">Subha Muhurtham</div>
+                <div class="event-details">
+                    <div>Thursday, 2nd July 2026</div>
+                    <div class="time">7.30 am to 9.00 am</div>
+                </div>
+            </div>
+            
+            <hr class="divider">
+            
+            <!-- Venue Section -->
+            <div class="venue-section">
+                <h3 class="venue-title">📍 Venue</h3>
+                <p class="event-details">
+                    <strong>AVVS Mahal</strong><br>
+                    Ammapet, Salem, Tamil Nadu
+                </p>
+                <a href="https://maps.app.goo.gl/kjPHEnUB7EFsHjDU9" target="_blank" class="btn-maps">View on Google Maps</a>
+            </div>
+
+            <!-- Countdown Timer -->
+            <div class="countdown-container">
+                <p class="countdown-title">Auspicious Muhurtham Begins In</p>
+                <div class="countdown" id="timer">
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="days">00</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="hours">00</span>
+                        <span class="countdown-label">Hrs</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="minutes">00</span>
+                        <span class="countdown-label">Mins</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-number" id="seconds">00</span>
+                        <span class="countdown-label">Secs</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Countdown Script -->
+    <script>
+        // Set the countdown date to Subha Muhurtham start time (July 2, 2026, 07:30 AM)
+        const weddingDate = new Date("July 2, 2026 07:30:00").getTime();
+
+        const timerInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            // Calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display results
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            // If countdown is finished
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.querySelector(".countdown-container").innerHTML = "<p class='event-name' style='color: var(--royal-gold)'>The Wedding Celebrations Have Begun!</p>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
