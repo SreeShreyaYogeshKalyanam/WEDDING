@@ -1,370 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation | Sree Shreya & Yogesh</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-maroon: #721c24;
-            --deep-crimson: #4a0007;
-            --royal-gold: #d4af37;
-            --light-gold: #f3e5ab;
-            --text-dark: #333333;
-            --text-light: #ffffff;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shreya &amp; Yogesh — We're Getting Married!</title>
+<meta name="description" content="Join the celebration! The wedding of Sree Shreya & Yogesh — 2nd July 2026, AVVS Mahal, Salem." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    /* emerald base */
+    --em-deep:#062c1d;     /* deepest page base */
+    --em:#0b4a32;
+    --em-2:#0e5a3d;
+    --em-soft:#1f9168;     /* bright emerald accent */
+    /* cream + gold */
+    --gold:#d4af5f;
+    --gold-bright:#ecd595;
+    --cream-text:#f6edd6;      /* text on emerald */
+    --cream-text-soft:#e3d7b9; /* warm soft text on emerald (was greenish) */
+    --ink:#0d3b28;             /* deep-emerald text on cream cards */
+    --ink-soft:#6d6553;        /* warm neutral secondary text on cream */
+    --bronze:#9a7416;          /* warm gold accent that reads on cream */
+    /* semantic aliases */
+    --cream:var(--em-deep);    /* page background */
+    --cream2:var(--em);
+    --white:#fbf3df;           /* cream card surface */
+    --line:rgba(212,175,95,.32);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--cream-text);
+    background:var(--cream);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  .fun{font-family:'Baloo 2',cursive;}
+  .script{font-family:'Pacifico',cursive;font-weight:400;}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  /* ---------------- toranam (hanging flower string) ---------------- */
+  .toranam{
+    display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
+    padding:16px 0 0;line-height:1;font-size:1.5rem;
+    filter:drop-shadow(0 2px 6px rgba(212,175,95,.4));
+  }
+  .toranam span{animation:sway 3s ease-in-out infinite;transform-origin:top center;color:var(--gold);}
+  .toranam span:nth-child(even){color:var(--cream-text);animation-delay:.4s;}
+  @keyframes sway{0%,100%{transform:rotate(-6deg);}50%{transform:rotate(6deg);}}
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--deep-crimson);
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
+  /* ---------------- confetti ---------------- */
+  #confetti{position:fixed;inset:0;pointer-events:none;z-index:60;}
 
-        /* Traditional Mandala Background Elements */
-        .bg-overlay {
-            background: radial-gradient(circle, rgba(114,28,36,0.9) 0%, rgba(74,0,7,1) 100%);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+  /* ---------------- hero ---------------- */
+  .hero{
+    position:relative;text-align:center;padding:14px 20px 70px;
+    background:
+      radial-gradient(circle at 12% 18%,rgba(31,145,104,.42),transparent 46%),
+      radial-gradient(circle at 88% 14%,rgba(212,175,95,.26),transparent 44%),
+      radial-gradient(circle at 50% 100%,rgba(31,145,104,.30),transparent 55%),
+      linear-gradient(160deg,#0b4a32 0%,#062c1d 60%,#063527 100%);
+    overflow:hidden;
+  }
+  .badge{
+    display:inline-block;margin:26px 0 6px;padding:8px 22px;border-radius:50px;
+    background:rgba(251,243,223,.08);border:2px dashed var(--gold);
+    color:var(--gold-bright);font-weight:600;letter-spacing:1px;font-size:.8rem;
+    text-transform:uppercase;box-shadow:0 6px 18px -8px rgba(212,175,95,.5);
+  }
+  .hero h1{
+    font-family:'Pacifico',cursive;font-weight:400;
+    font-size:clamp(2.2rem,10.5vw,6.6rem);line-height:1.32;margin:6px 0 0;
+    padding-bottom:.18em;overflow-wrap:break-word;
+    max-width:100%;
+    background:linear-gradient(90deg,#f6edd6,#ecd595 45%,#d4af5f 70%,#f6edd6);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .amp{font-family:'Baloo 2',cursive;font-size:.55em;color:var(--gold);-webkit-text-fill-color:var(--gold);display:inline-block;transform:translateY(-6px);}
+  .hero .sub{font-family:'Baloo 2',cursive;font-size:clamp(1.1rem,3.4vw,1.5rem);color:var(--cream-text-soft);margin-top:6px;}
 
-        /* Main Card Container */
-        .invitation-card {
-            background-color: #fffdf9;
-            max-width: 650px;
-            width: 100%;
-            border: 8px double var(--royal-gold);
-            border-radius: 15px;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
-            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-            animation: fadeIn 1.5s ease-in-out;
-        }
+  .hero-mascot{
+    position:relative;margin:18px auto 0;max-width:340px;
+    animation:floaty 4.5s ease-in-out infinite;
+  }
+  .hero-mascot img{width:100%;height:auto;filter:drop-shadow(0 22px 26px rgba(0,0,0,.45));}
+  @keyframes floaty{0%,100%{transform:translateY(0) rotate(-1deg);}50%{transform:translateY(-14px) rotate(1deg);}}
 
-        /* Traditional Corner Borders */
-        .invitation-card::before {
-            content: "🔱";
-            position: absolute;
-            top: 15px;
-            font-size: 24px;
-            color: var(--royal-gold);
-            left: 50%;
-            transform: translateX(-50%);
-        }
+  .date-pill{
+    display:inline-flex;align-items:center;gap:10px;margin-top:8px;
+    padding:12px 26px;border-radius:50px;
+    background:var(--white);border:1px solid var(--line);
+    box-shadow:0 12px 26px -12px rgba(0,0,0,.6);
+    font-family:'Baloo 2',cursive;font-size:1.15rem;color:var(--ink);
+  }
+  .date-pill .em{font-size:1.3rem;}
 
-        /* Typography styling */
-        .auspicious-symbol {
-            font-size: 28px;
-            color: var(--royal-gold);
-            margin-bottom: 10px;
-        }
+  .scroll-hint{margin-top:30px;font-family:'Baloo 2',cursive;color:var(--gold-bright);font-size:.9rem;letter-spacing:1px;animation:bob 2s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
 
-        .invitation-text {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--primary-maroon);
-            font-weight: 600;
-        }
+  /* ---------------- sections ---------------- */
+  section{position:relative;padding:74px 20px;}
+  .wrap{max-width:1000px;margin:0 auto;}
+  .title{text-align:center;font-family:'Baloo 2',cursive;font-weight:800;
+    font-size:clamp(2rem,6vw,3rem);margin-bottom:6px;}
+  .title.gold{color:var(--gold-bright);}
+  .title.cream{color:var(--cream-text);}
+  .kicker{text-align:center;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+    font-size:.72rem;color:var(--cream-text-soft);margin-bottom:40px;}
 
-        .couple-names {
-            margin: 30px 0;
-        }
+  /* couple intro */
+  .intro{background:
+    radial-gradient(circle at 88% 8%,rgba(212,175,95,.22),transparent 46%),
+    radial-gradient(circle at 8% 92%,rgba(31,145,104,.34),transparent 48%),
+    linear-gradient(180deg,#07331f 0%,#0b4a32 100%);}
+  .pair{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:14px;}
+  .who{text-align:center;}
+  .who .stand{max-width:240px;width:100%;height:auto;margin:0 auto;display:block;
+    filter:drop-shadow(0 16px 18px rgba(0,0,0,.4));transition:transform .35s ease;}
+  .who:hover .stand{transform:translateY(-8px) scale(1.03);}
+  .who .card{
+    margin-top:-6px;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:16px 18px;
+    box-shadow:0 18px 36px -18px rgba(0,0,0,.6);position:relative;
+  }
+  .who .card::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    border:8px solid transparent;border-bottom-color:var(--white);}
+  .who .role{font-family:'Baloo 2',cursive;font-weight:700;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;}
+  .who.groom .role{color:var(--bronze);}
+  .who.bride .role{color:var(--bronze);}
+  .who .nm{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.7rem;line-height:1.1;color:var(--ink);}
+  .who .par{font-size:.92rem;color:var(--ink-soft);margin-top:4px;}
+  .heart{align-self:center;font-size:2.4rem;color:var(--gold);animation:beat 1.6s ease-in-out infinite;}
+  @keyframes beat{0%,100%{transform:scale(1);}25%{transform:scale(1.25);}40%{transform:scale(1.05);}}
 
-        .name {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 2.2rem;
-            color: var(--primary-maroon);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-        }
+  /* events */
+  .events{background:
+    radial-gradient(circle at 10% 88%,rgba(31,145,104,.38),transparent 50%),
+    radial-gradient(circle at 90% 12%,rgba(212,175,95,.20),transparent 44%),
+    linear-gradient(180deg,#0a3f2a 0%,#062c1d 100%);}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .ecard{
+    background:var(--white);border-radius:26px;overflow:hidden;text-align:center;
+    box-shadow:0 26px 50px -28px rgba(0,0,0,.7);
+    border:1px solid var(--line);transition:transform .35s ease,box-shadow .35s ease;
+  }
+  .ecard:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:0 32px 56px -24px rgba(0,0,0,.75);}
+  .ecard .pic{padding:22px 10px 0;}
+  .ecard .pic img{max-height:230px;width:auto;max-width:90%;}
+  .ecard .body{padding:6px 22px 30px;}
+  .ecard h3{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.7rem;}
+  .ecard.eng h3{color:var(--bronze);}
+  .ecard.wed h3{color:var(--bronze);}
+  .ecard .tag{display:inline-block;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:12px;}
+  .ecard .when{font-family:'Baloo 2',cursive;font-weight:600;font-size:1.2rem;color:var(--ink);}
+  .ecard .time{color:var(--ink-soft);margin-top:2px;}
 
-        .parents {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 5px;
-            font-style: italic;
-        }
+  /* countdown */
+  .countdown{text-align:center;background:
+    radial-gradient(circle at 80% 88%,rgba(212,175,95,.26),transparent 50%),
+    radial-gradient(circle at 15% 15%,rgba(31,145,104,.36),transparent 48%),
+    linear-gradient(160deg,#0b4a32 0%,#07331f 100%);}
+  .counts{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .cbox{min-width:96px;padding:22px 12px;border-radius:20px;background:var(--white);
+    box-shadow:0 18px 34px -22px rgba(0,0,0,.7);border:1px solid var(--line);}
+  .cbox .n{font-family:'Baloo 2',cursive;font-weight:800;font-size:2.6rem;line-height:1;
+    background:linear-gradient(90deg,#caa23f,#9a6f15);-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .cbox .u{font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;}
+  .cdone{font-family:'Pacifico',cursive;font-size:1.8rem;color:var(--gold-bright);}
 
-        .ampersand {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
-            color: var(--royal-gold);
-            margin: 10px 0;
-            display: block;
-        }
+  /* venue */
+  .venue{background:
+    radial-gradient(circle at 85% 78%,rgba(31,145,104,.36),transparent 50%),
+    radial-gradient(circle at 12% 20%,rgba(212,175,95,.22),transparent 46%),
+    linear-gradient(180deg,#0a4029 0%,#062c1d 100%);}
+  .venue-grid{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:30px;}
+  .venue-grid .vmascot{max-width:300px;width:100%;height:auto;margin:0 auto;
+    filter:drop-shadow(0 18px 20px rgba(0,0,0,.4));animation:floaty 5s ease-in-out infinite;}
+  .vcard{background:var(--white);border-radius:26px;padding:34px 30px;text-align:center;
+    border:1px solid var(--line);box-shadow:0 26px 50px -28px rgba(0,0,0,.7);}
+  .vcard .hello{font-family:'Pacifico',cursive;color:var(--bronze);font-size:1.5rem;}
+  .vcard .vname{font-family:'Baloo 2',cursive;font-weight:800;font-size:2rem;color:var(--ink);margin-top:4px;}
+  .vcard .vaddr{color:var(--ink-soft);font-size:1.05rem;margin-top:4px;}
+  .vcard .mbtn{display:inline-block;margin-top:20px;padding:13px 32px;border-radius:50px;
+    background:linear-gradient(90deg,var(--em-2),var(--em-soft));color:var(--cream-text);text-decoration:none;
+    font-family:'Baloo 2',cursive;font-weight:700;letter-spacing:.5px;border:1px solid var(--gold);
+    box-shadow:0 12px 26px -10px rgba(0,0,0,.6);transition:transform .3s ease;}
+  .vcard .mbtn:hover{transform:translateY(-3px) scale(1.04);}
 
-        hr.divider {
-            border: 0;
-            height: 1px;
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(212, 175, 55, 0.75), rgba(0, 0, 0, 0));
-            margin: 25px auto;
-            width: 80%;
-        }
+  /* footer */
+  footer{position:relative;text-align:center;padding:70px 20px 90px;overflow:hidden;
+    background:
+      radial-gradient(circle at 50% 0%,rgba(212,175,95,.30),transparent 55%),
+      linear-gradient(180deg,#07331f 0%,#0b4a32 100%);}
+  .foot-illu{max-width:300px;width:80%;height:auto;border-radius:24px;margin:0 auto 20px;display:block;
+    border:3px solid rgba(212,175,95,.45);box-shadow:0 24px 50px -24px rgba(0,0,0,.7);}
+  footer .bless{font-family:'Baloo 2',cursive;font-size:1.15rem;color:var(--cream-text-soft);max-width:520px;margin:0 auto 16px;}
+  footer .love{font-family:'Pacifico',cursive;font-size:2rem;color:var(--gold-bright);}
+  footer .fn{font-family:'Baloo 2',cursive;font-weight:700;font-size:1.3rem;color:var(--cream-text);}
 
-        /* Events Section */
-        .section-title {
-            font-family: 'Cinzel Decorative', serif;
-            color: var(--royal-gold);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            background-color: var(--deep-crimson);
-            padding: 5px 15px;
-            display: inline-block;
-            border-radius: 4px;
-        }
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease;}
+  .reveal.show{opacity:1;transform:none;}
 
-        .event-box {
-            background: #fff8eb;
-            border: 1px dashed var(--royal-gold);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px auto;
-            width: 90%;
-            transition: transform 0.3s ease;
-        }
-
-        .event-box:hover {
-            transform: scale(1.02);
-        }
-
-        .event-name {
-            font-family: 'Cinzel Decorative', serif;
-            font-size: 1.2rem;
-            color: var(--primary-maroon);
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
-
-        .event-details {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
-        .time {
-            font-weight: 600;
-            color: #b32424;
-        }
-
-        /* Venue styling */
-        .venue-section {
-            margin-top: 30px;
-            padding: 0 10px;
-        }
-
-        .venue-title {
-            font-weight: 600;
-            color: var(--primary-maroon);
-            margin-bottom: 5px;
-        }
-
-        .btn-maps {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: var(--royal-gold);
-            color: var(--deep-crimson);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-maps:hover {
-            background-color: var(--deep-crimson);
-            color: var(--royal-gold);
-            border: 1px solid var(--royal-gold);
-            box-shadow: 0 6px 15px rgba(212,175,55,0.4);
-        }
-
-        /* Countdown Timer */
-        .countdown-container {
-            margin: 30px 0 10px;
-        }
-        
-        .countdown-title {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #888;
-            margin-bottom: 10px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .countdown-item {
-            background: var(--primary-maroon);
-            color: white;
-            padding: 10px;
-            border-radius: 6px;
-            min-width: 60px;
-        }
-
-        .countdown-number {
-            font-size: 1.2rem;
-            font-weight: 600;
-            display: block;
-        }
-
-        .countdown-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            color: var(--light-gold);
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 480px) {
-            .name { font-size: 1.8rem; }
-            .ampersand { font-size: 2.8rem; }
-            .invitation-card { padding: 30px 15px; }
-            .event-box { width: 100%; }
-        }
-    </style>
+  @media(max-width:760px){
+    .pair{grid-template-columns:1fr;gap:34px;}
+    .heart{transform:rotate(90deg);}
+    .cards{grid-template-columns:1fr;}
+    .venue-grid{grid-template-columns:1fr;gap:18px;}
+  }
+  @media(max-width:480px){
+    section{padding:54px 16px;}
+    .hero{padding:10px 16px 54px;}
+    .kicker{margin-bottom:30px;}
+    .cbox{min-width:0;flex:1 1 40%;}      /* 2x2 grid of countdown boxes */
+    .cbox .n{font-size:2.2rem;}
+    .ecard .pic img{max-height:200px;}
+    .vcard{padding:28px 22px;}
+  }
+</style>
 </head>
 <body>
+<canvas id="confetti"></canvas>
 
-    <div class="bg-overlay">
-        <div class="invitation-card">
-            
-            <!-- Auspicious Symbol -->
-            <div class="auspicious-symbol">ॐ</div>
-            
-            <p class="invitation-text">We cordially invite you to celebrate the holy union of</p>
-            
-            <!-- Couple Details -->
-            <div class="couple-names">
-                <div class="bride-details">
-                    <h1 class="name">Sree Shreya</h1>
-                    <p class="parents">Daughter of Sri. Manikandan & Smt. Maheswari</p>
-                </div>
-                <span class="ampersand">&</span>
+<!-- HERO -->
+<header class="hero">
+  <div class="toranam" aria-hidden="true">
+    <span>✿</span><span>❀</span><span>✿</span><span>❀</span><span>✿</span><span>❀</span>
+    <span>✿</span><span>❀</span><span>✿</span><span>❀</span><span>✿</span><span>❀</span><span>✿</span>
+  </div>
+  <div class="badge">We're getting married!</div>
+  <h1 class="wrap">Shreya <span class="amp">&amp;</span> Yogesh</h1>
+  <p class="sub">…and we can't wait to celebrate with you 🎉</p>
 
-                <div class="groom-details">
-                    <h1 class="name">Yogesh</h1>
-                    <p class="parents">Son of Sri. Athinarasimman & Smt. Shanthi</p>
-                </div>
-                
+  <div class="hero-mascot">
+    <img src="images/png/bride-groom.png" alt="Cartoon of Shreya and Yogesh" />
+  </div>
 
-            </div>
-            
-            <hr class="divider">
-            
-            <!-- Events Section -->
-            <h2 class="section-title">Programmes</h2>
-            
-            <!-- Event 1 -->
-            <div class="event-box">
-                <div class="event-name">Nichyathartham</div>
-                <div class="event-details">
-                    <div>Wednesday, 1st July 2026</div>
-                    <div class="time">6.00 pm to 7.30 pm</div>
-                </div>
-            </div>
-            
-            <!-- Event 2 -->
-            <div class="event-box">
-                <div class="event-name">Subha Muhurtham</div>
-                <div class="event-details">
-                    <div>Thursday, 2nd July 2026</div>
-                    <div class="time">7.30 am to 9.00 am</div>
-                </div>
-            </div>
-            
-            <hr class="divider">
-            
-            <!-- Venue Section -->
-            <div class="venue-section">
-                <h3 class="venue-title">📍 Venue</h3>
-                <p class="event-details">
-                    <strong>AVVS Mahal</strong><br>
-                    Ammapet, Salem, Tamil Nadu
-                </p>
-                <a href="https://maps.app.goo.gl/kjPHEnUB7EFsHjDU9" target="_blank" class="btn-maps">View on Google Maps</a>
-            </div>
+  <div class="date-pill"><span class="em">📅</span> Thursday, 2<sup>nd</sup> July 2026</div>
+  <div class="scroll-hint">scroll down for the details ↓</div>
+</header>
 
-            <!-- Countdown Timer -->
-            <div class="countdown-container">
-                <p class="countdown-title">Auspicious Muhurtham Begins In</p>
-                <div class="countdown" id="timer">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">00</span>
-                        <span class="countdown-label">Days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">00</span>
-                        <span class="countdown-label">Hrs</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">00</span>
-                        <span class="countdown-label">Mins</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">00</span>
-                        <span class="countdown-label">Secs</span>
-                    </div>
-                </div>
-            </div>
-
+<!-- COUPLE INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <h2 class="title gold reveal">Meet the Couple</h2>
+    <p class="kicker reveal">with the blessings of their families</p>
+    <div class="pair">
+      <div class="who groom reveal">
+        <img class="stand" src="images/png/groom.png" alt="Cartoon of the groom Yogesh" />
+        <div class="card">
+          <div class="role">The Groom</div>
+          <div class="nm">Yogesh</div>
+          <div class="par">S/o Sri. Athinarasimmam<br>&amp; Smt. Shanthi</div>
         </div>
+      </div>
+
+      <div class="heart reveal">&#10084;</div>
+
+      <div class="who bride reveal">
+        <img class="stand" src="images/png/bride.png" alt="Cartoon of the bride Sree Shreya" />
+        <div class="card">
+          <div class="role">The Bride</div>
+          <div class="nm">Sree Shreya</div>
+          <div class="par">D/o Sri. Manikandan<br>&amp; Smt. Maheshwari</div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Countdown Script -->
-    <script>
-        // Set the countdown date to Subha Muhurtham start time (July 2, 2026, 07:30 AM)
-        const weddingDate = new Date("July 2, 2026 07:30:00").getTime();
+<!-- EVENTS -->
+<section class="events">
+  <div class="wrap">
+    <h2 class="title cream reveal">Save the Dates!</h2>
+    <p class="kicker reveal">two days of joy — please join us</p>
+    <div class="cards">
+      <div class="ecard eng reveal">
+        <div class="pic"><img src="images/png/engagement.png" alt="Engagement ceremony cartoon" /></div>
+        <div class="body">
+          <h3>Nichayathartham</h3>
+          <div class="tag">Engagement 💍</div>
+          <div class="when">Wednesday, 1<sup>st</sup> July 2026</div>
+          <div class="time">6:00 PM – 7:30 PM</div>
+        </div>
+      </div>
+      <div class="ecard wed reveal">
+        <div class="pic"><img src="images/png/marriage.png" alt="Wedding ceremony cartoon" /></div>
+        <div class="body">
+          <h3>Subha Muhurtham</h3>
+          <div class="tag">Wedding 🔥🌸</div>
+          <div class="when">Thursday, 2<sup>nd</sup> July 2026</div>
+          <div class="time">7:30 AM – 9:00 AM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        const timerInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
+<!-- COUNTDOWN -->
+<section class="countdown">
+  <div class="wrap">
+    <h2 class="title gold reveal">The Countdown Is On!</h2>
+    <p class="kicker reveal">until the muhurtham</p>
+    <div class="counts reveal" id="countdown">
+      <div class="cbox"><div class="n" id="cd-days">--</div><div class="u">Days</div></div>
+      <div class="cbox"><div class="n" id="cd-hours">--</div><div class="u">Hours</div></div>
+      <div class="cbox"><div class="n" id="cd-mins">--</div><div class="u">Minutes</div></div>
+      <div class="cbox"><div class="n" id="cd-secs">--</div><div class="u">Seconds</div></div>
+    </div>
+  </div>
+</section>
 
-            // Calculations for days, hours, minutes and seconds
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+<!-- VENUE -->
+<section class="venue">
+  <div class="wrap">
+    <h2 class="title cream reveal">Come Celebrate With Us</h2>
+    <p class="kicker reveal">we'd love to welcome you</p>
+    <div class="venue-grid">
+      <img class="vmascot reveal" src="images/png/welcoming.png" alt="Couple welcoming guests with namaste" />
+      <div class="vcard reveal">
+        <div class="hello">Vanakkam! 🙏</div>
+        <div class="vname">AVVS Mahal</div>
+        <div class="vaddr">Ammapet, Salem, Tamil Nadu</div>
+        <a class="mbtn" href="https://www.google.com/maps/search/?api=1&query=AVVS+Mahal+Ammapet+Salem+Tamilnadu" target="_blank" rel="noopener">📍 Open in Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-            // Display results
-            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+<!-- FOOTER -->
+<footer>
+  <img class="foot-illu reveal" src="images/png/together.png" alt="Shreya and Yogesh together" />
+  <p class="bless reveal">Your love &amp; blessings will make our big day truly special.</p>
+  <p class="love reveal">With all our love,</p>
+  <p class="fn reveal">Shreya &amp; Yogesh 💑</p>
+</footer>
 
-            // If countdown is finished
-            if (distance < 0) {
-                clearInterval(timerInterval);
-                document.querySelector(".countdown-container").innerHTML = "<p class='event-name' style='color: var(--royal-gold)'>The Wedding Celebrations Have Begun!</p>";
-            }
-        }, 1000);
-    </script>
+<script>
+  // ---- scroll reveal ----
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---- countdown to 2 July 2026, 7:30 AM IST ----
+  const target=new Date('2026-07-02T07:30:00+05:30').getTime();
+  const $=id=>document.getElementById(id), grid=$('countdown');
+  const pad=n=>String(n).padStart(2,'0');
+  function tick(){
+    const diff=target-Date.now();
+    if(diff<=0){grid.innerHTML='<p class="cdone">🎉 The big day is here — celebrate with us! 🎉</p>';clearInterval(t);return;}
+    $('cd-days').textContent=Math.floor(diff/864e5);
+    $('cd-hours').textContent=pad(Math.floor(diff%864e5/36e5));
+    $('cd-mins').textContent=pad(Math.floor(diff%36e5/6e4));
+    $('cd-secs').textContent=pad(Math.floor(diff%6e4/1e3));
+  }
+  tick();const t=setInterval(tick,1000);
+
+  // ---- lightweight confetti burst on load + gentle drizzle (emerald / gold / cream) ----
+  (function(){
+    const c=document.getElementById('confetti'),x=c.getContext('2d');
+    let W,H,parts=[];const colors=['#1f9168','#0b4a32','#d4af5f','#ecd595','#fbf3df','#0e5a3d'];
+    function size(){W=c.width=innerWidth;H=c.height=innerHeight;}
+    size();addEventListener('resize',size);
+    function spawn(n,burst){for(let i=0;i<n;i++)parts.push({
+      x:Math.random()*W,y:burst?Math.random()*H*0.4:-10,
+      r:4+Math.random()*5,c:colors[i%colors.length],
+      vx:(Math.random()-.5)*1.6,vy:1+Math.random()*2.4,
+      a:Math.random()*6,va:(Math.random()-.5)*.2});}
+    spawn(120,true);
+    let drizzle=0;
+    function loop(){
+      x.clearRect(0,0,W,H);
+      for(let i=parts.length-1;i>=0;i--){const p=parts[i];
+        p.x+=p.vx;p.y+=p.vy;p.a+=p.va;
+        x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;
+        x.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);x.restore();
+        if(p.y>H+20)parts.splice(i,1);}
+      if(++drizzle%26===0&&parts.length<90)spawn(2,false);
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+</script>
 </body>
 </html>
